@@ -93,7 +93,6 @@ export function move(_grid: Grid, type: "up" | "down" | "left" | "right") {
         if (!changed) changed = true;
         const id = new Date().getTime();
         const final = { x: x1, y: y1, value: from.final.value };
-        console.log("move", from, to, final);
         grid[y1][x1] = { id, from: { ...from.final }, to: null, final };
         grid[y2][x2] = null;
         k++;
@@ -103,10 +102,6 @@ export function move(_grid: Grid, type: "up" | "down" | "left" | "right") {
       if (from.final.value === to.final.value) {
         if (!changed) changed = true;
         const value = from.final.value + to.final.value;
-        console.log(
-          `merge value: ${from.final.value} + ${to.final.value} = ${value}`
-        );
-
         score += value;
         const id = new Date().getTime();
         const final = { x: x1, y: y1, value };
@@ -132,13 +127,6 @@ export function removeAnimation(grid: Grid) {
     return row.map<GridCell | null>((cell: GridCell | null) => {
       if (cell === null) return null;
       const id = new Date().getTime();
-      console.log("clear", {
-        id,
-        from: null,
-        to: null,
-        final: { ...cell.final }
-      });
-
       return { id, from: null, to: null, final: { ...cell.final } };
     });
   });
