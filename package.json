@@ -1,13 +1,8 @@
 {
   "name": "2048",
   "version": "1.0.0",
-  "description": "A 2048 game with animations.",
-  "keywords": [
-    "react.js",
-    "game",
-    "typescript",
-    "2048"
-  ],
+  "description": "A 2048 game built by React.JS and TypeScript.",
+  "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
     "@material-ui/core": "4.5.2",
